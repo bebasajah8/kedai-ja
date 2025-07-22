@@ -7,6 +7,7 @@ import Admin from '../models/Admin';
 import MenuItem from '../models/MenuItem';
 import Settings from '../models/Settings';
 import BestSeller from '../models/BestSeller';
+import AboutUs from '../models/AboutUs';
 
 async function seedDatabase() {
   try {
@@ -21,6 +22,7 @@ async function seedDatabase() {
     await MenuItem.deleteMany({});
     await Settings.deleteMany({});
     await BestSeller.deleteMany({});
+    await AboutUs.deleteMany({});
     console.log('🗑️  Cleared existing data');
 
     // Create admin account
@@ -114,12 +116,31 @@ async function seedDatabase() {
     await settings.save();
     console.log('⚙️  Created restaurant settings');
 
+    // Create about us data
+    const aboutUs = new AboutUs({
+      title: 'About Us',
+      subtitle: 'Welcome to Kedai J.A',
+      description: 'Kedai J.A adalah destinasi kuliner yang menghadirkan cita rasa autentik Indonesia dengan sentuhan modern. Kami berkomitmen untuk menyajikan hidangan berkualitas tinggi dengan bahan-bahan segar pilihan.',
+      secondDescription: 'Dengan pengalaman bertahun-tahun di industri kuliner, kami terus berinovasi untuk memberikan pengalaman dining yang tak terlupakan. Setiap hidangan dibuat dengan penuh cinta dan keahlian oleh chef berpengalaman kami.',
+      yearsOfExperience: 7,
+      masterChefs: 25,
+      images: {
+        image1: 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg',
+        image2: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg',
+        image3: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg',
+        image4: 'https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg'
+      }
+    });
+    await aboutUs.save();
+    console.log('ℹ️  Created about us data');
+
     console.log('🎉 Database seeding completed successfully!');
     console.log('\n📋 Summary:');
     console.log('- Admin: admin@kedai-ja.com / admin123');
     console.log('- Menu items: 6 items created');
     console.log('- Best sellers: 4 items created');
     console.log('- Restaurant settings: configured');
+    console.log('- About us: configured with sample images');
     console.log('\n🚀 You can now start the application with: npm run dev');
     
   } catch (error) {
