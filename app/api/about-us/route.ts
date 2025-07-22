@@ -15,13 +15,16 @@ export async function GET() {
         subtitle: 'Welcome to Kedai J.A',
         description: 'Kedai J.A adalah destinasi kuliner yang menghadirkan cita rasa autentik Indonesia dengan sentuhan modern. Kami berkomitmen untuk menyajikan hidangan berkualitas tinggi dengan bahan-bahan segar pilihan.',
         secondDescription: 'Dengan pengalaman bertahun-tahun di industri kuliner, kami terus berinovasi untuk memberikan pengalaman dining yang tak terlupakan. Setiap hidangan dibuat dengan penuh cinta dan keahlian oleh chef berpengalaman kami.',
+        companyDescription: 'Kedai J.A adalah destinasi kuliner yang menghadirkan cita rasa autentik Indonesia dengan sentuhan modern. Didirikan dengan visi untuk melestarikan warisan kuliner nusantara, kami berkomitmen menyajikan hidangan berkualitas tinggi menggunakan bahan-bahan segar pilihan dan resep turun-temurun yang telah diwariskan dari generasi ke generasi.',
         yearsOfExperience: 7,
         masterChefs: 25,
         images: {
           image1: '',
           image2: '',
           image3: '',
-          image4: ''
+          image4: '',
+          lingkunganKedai: [],
+          spotTempatDuduk: []
         }
       });
       await aboutUs.save();
@@ -42,13 +45,16 @@ export async function GET() {
           subtitle: 'Welcome to Kedai J.A',
           description: 'Kedai J.A adalah destinasi kuliner yang menghadirkan cita rasa autentik Indonesia dengan sentuhan modern.',
           secondDescription: 'Dengan pengalaman bertahun-tahun di industri kuliner, kami terus berinovasi untuk memberikan pengalaman dining yang tak terlupakan.',
+          companyDescription: 'Kedai J.A adalah destinasi kuliner yang menghadirkan cita rasa autentik Indonesia dengan sentuhan modern.',
           yearsOfExperience: 7,
           masterChefs: 25,
           images: {
             image1: '',
             image2: '',
             image3: '',
-            image4: ''
+            image4: '',
+            lingkunganKedai: [],
+            spotTempatDuduk: []
           }
         }
       },

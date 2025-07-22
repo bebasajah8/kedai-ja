@@ -6,6 +6,7 @@ export interface IAboutUs {
   subtitle: string;
   description: string;
   secondDescription: string;
+  companyDescription: string;
   yearsOfExperience: number;
   masterChefs: number;
   images: {
@@ -13,6 +14,8 @@ export interface IAboutUs {
     image2?: string;
     image3?: string;
     image4?: string;
+    lingkunganKedai: string[];
+    spotTempatDuduk: string[];
   };
   createdAt?: Date;
   updatedAt?: Date;
@@ -43,6 +46,12 @@ const AboutUsSchema = new mongoose.Schema({
     trim: true,
     default: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet'
   },
+  companyDescription: {
+    type: String,
+    required: [true, 'Company description is required'],
+    trim: true,
+    default: 'Kedai J.A adalah destinasi kuliner yang menghadirkan cita rasa autentik Indonesia dengan sentuhan modern. Didirikan dengan visi untuk melestarikan warisan kuliner nusantara, kami berkomitmen menyajikan hidangan berkualitas tinggi menggunakan bahan-bahan segar pilihan dan resep turun-temurun yang telah diwariskan dari generasi ke generasi.'
+  },
   yearsOfExperience: {
     type: Number,
     required: [true, 'Years of experience is required'],
@@ -71,6 +80,14 @@ const AboutUsSchema = new mongoose.Schema({
     image4: {
       type: String,
       default: ''
+    },
+    lingkunganKedai: {
+      type: [String],
+      default: []
+    },
+    spotTempatDuduk: {
+      type: [String],
+      default: []
     }
   }
 }, {
