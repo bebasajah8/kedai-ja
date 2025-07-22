@@ -129,7 +129,7 @@ export default function AdminAboutUs() {
         image1: null,
         image2: null,
         image3: null,
-        image4: null
+        image4: null,
         lingkunganKedai: null,
         spotTempatDuduk: null
       });
@@ -520,6 +520,7 @@ export default function AdminAboutUs() {
                       <p className="text-sm text-gray-500">
                         <span className="font-semibold">Tambah gambar spot tempat duduk</span>
                       </p>
+                    </div>
                     <input
                       type="file"
                       className="hidden"
