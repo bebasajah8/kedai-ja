@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ChefHat, Star, Clock, MapPin, Phone, ArrowRight, Menu, X, ShoppingCart, Headphones, Utensils, User } from 'lucide-react';
 import Footer from '@/app/admin/components/Footer';
-import AboutUsSection from '@/components/AboutUsSection';
+import AboutUsSection from '@/components/ui/aboutussection';
 
 type MenuItem = {
   _id: string;
